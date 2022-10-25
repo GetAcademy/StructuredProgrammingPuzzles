@@ -48,16 +48,52 @@
 var cities = new string[] { "Oslo", "Larvik", "Stavern", "Stavanger", "Bergen"};
 
 // Insertion sort
-// 1. Liste: "Oslo", "Larvik", "Stavern", "Stavanger", "Berge"
-// 2. Hvilken by er først fra og med index 0? "Oslo"
+// 1. Liste: "Oslo", "Larvik", "Stavern", "Stavanger", "Bergen"
+// 2. Hvilken by er først fra og med index 0? "Bergen"
+//    Ny liste: "Bergen"
+//    Oppdaterer original liste: "Oslo", "Larvik", "Stavern", "Stavanger", "Oslo"
+// 3. Hvilken by er først fra og med index 1? "Larvik"
+//    Ny liste: "Bergen", "Larvik"
+//    Oppdaterer original liste: "Oslo", "Larvik", "Stavern", "Stavanger", "Oslo"
+// 4. Hvilken by er først fra og med index 2? "Oslo"
+//    Ny liste: "Bergen", "Larvik", "Oslo"
+//    Oppdaterer original liste: "Oslo", "Larvik", "Stavern", "Stavanger", "Stavern"
+// 5. Hvilken by er først fra og med index 3? "Stavanger"
+//    Ny liste: "Bergen", "Larvik", "Oslo", "Stavanger"
+//    Oppdaterer original liste: "Oslo", "Larvik", "Stavern", "Stavanger", "Stavern"
+// 6. Hvilken by er først fra og med index 4? "Stavern"
+//    Ny liste: "Bergen", "Larvik", "Oslo", "Stavanger", "Stavern"
+//    Oppdaterer original liste: "Oslo", "Larvik", "Stavern", "Stavanger", "Stavern"
 
 // Array.Sort(cities);
 var newCities = new string[cities.Length];
 for (int i = 0; i < newCities.Length; i++)
 {
-    newCities[i] = FindFirst(cities, i);
+    // 1. finne første fra og med index i
+    var first = cities[i];
+    var foundIndex = i;
+    for (var index = i; index < cities.Length; index++)
+    {
+        var city = cities[index];
+        // if(city < first)
+        if (city.CompareTo(first) == -1)
+        {
+            first = city;
+            foundIndex = index;
+        }
+    }
+
+    newCities[i] = first;
+    // 2. Erstatte den vi fant med det som ligger på index i
+    cities[foundIndex] = cities[i];
 }
 
+foreach (var city in newCities)
+{
+    Console.WriteLine(city);
+}
+
+// Pause til 11:10
 
 
 
