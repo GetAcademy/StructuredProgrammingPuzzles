@@ -4,6 +4,7 @@
     {
         static readonly int Width = Console.WindowWidth - 1;
         static readonly int Height = Console.WindowHeight - 1;
+
         public static void Run()
         {
             var cellCount = Width * Height;
@@ -50,13 +51,13 @@
         {
             var row = baseIndex / Width;
             var col = baseIndex % Width;
-            var lastRow = Height-1;
+            var lastRow = Height - 1;
             var lastCol = Width - 1;
             if (row == 0 && deltaRow == -1
                 || row == lastRow && deltaRow == 1
                 || col == 0 && deltaCol == -1
                 || col == lastCol && deltaCol == 1) return 0;
-            var cellIndex = baseIndex + deltaCol + deltaRow*Width;
+            var cellIndex = baseIndex + deltaCol + deltaRow * Width;
             return cells[cellIndex] ? 1 : 0;
         }
 

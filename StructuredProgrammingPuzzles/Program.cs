@@ -45,7 +45,7 @@
 //Console.WriteLine(nextText2);
 
 //  - Sortere en liste manuelt
-var cities = new string[] { "Oslo", "Larvik", "Stavern", "Stavanger", "Bergen"};
+//var cities = new string[] { "Oslo", "Larvik", "Stavern", "Stavanger", "Bergen"};
 
 // Insertion sort
 // 1. Liste: "Oslo", "Larvik", "Stavern", "Stavanger", "Bergen"
@@ -66,39 +66,50 @@ var cities = new string[] { "Oslo", "Larvik", "Stavern", "Stavanger", "Bergen"};
 //    Oppdaterer original liste: "Oslo", "Larvik", "Stavern", "Stavanger", "Stavern"
 
 // Array.Sort(cities);
-var newCities = new string[cities.Length];
-for (int i = 0; i < newCities.Length; i++)
-{
-    // 1. finne første fra og med index i
-    var first = cities[i];
-    var foundIndex = i;
-    for (var index = i; index < cities.Length; index++)
-    {
-        var city = cities[index];
-        // if(city < first)
-        if (city.CompareTo(first) == -1)
-        {
-            first = city;
-            foundIndex = index;
-        }
-    }
+//var newCities = new string[cities.Length];
+//for (int i = 0; i < newCities.Length; i++)
+//{
+//    // 1. finne første fra og med index i
+//    var first = cities[i];
+//    var foundIndex = i;
+//    for (var index = i; index < cities.Length; index++)
+//    {
+//        var city = cities[index];
+//        // if(city < first)
+//        if (city.CompareTo(first) == -1)
+//        {
+//            first = city;
+//            foundIndex = index;
+//        }
+//    }
 
-    newCities[i] = first;
-    // 2. Erstatte den vi fant med det som ligger på index i
-    cities[foundIndex] = cities[i];
-}
+//    newCities[i] = first;
+//    // 2. Erstatte den vi fant med det som ligger på index i
+//    cities[foundIndex] = cities[i];
+//}
 
-foreach (var city in newCities)
-{
-    Console.WriteLine(city);
-}
-
-// Pause til 11:10
-
-
+//foreach (var city in newCities)
+//{
+//    Console.WriteLine(city);
+//}
 
 //  - Kjenne igjen Yatzy-kombinasjoner
+
+//var dice = new int[] {6, 6, 2, 3, 4};
+//var frequencies = new int[7];
+//foreach (var die in dice)
+//{
+//    frequencies[die]++;
+//}
+
+//for (var dieValue = 1; dieValue <= 6; dieValue++)
+//{
+//    var frequency = frequencies[dieValue];
+//    Console.WriteLine($"Det var {frequency} terninger med verdien {dieValue}");
+//}
+
 //  - Game of life
-//    GameOfLife.Run();
+//using StructuredProgrammingPuzzles;
+//GameOfLife.Run();
 //  - Ideer fra dere?
-// 
+//  - Think like a programmer!
