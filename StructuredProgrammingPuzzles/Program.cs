@@ -46,17 +46,18 @@
 
 //  - Sortere en liste manuelt
 var cities = new string[] { "Oslo", "Larvik", "Stavern", "Stavanger", "Bergen"};
-// Gammel liste: , "Larvik", "Stavern", "Stavanger", "Oslo"
-// Ny liste: "Bergen", "Larvik"
-// Array.Sort(cities);
+
 // Insertion sort
+// 1. Liste: "Oslo", "Larvik", "Stavern", "Stavanger", "Berge"
+// 2. Hvilken by er først fra og med index 0? "Oslo"
+
+// Array.Sort(cities);
 var newCities = new string[cities.Length];
 for (int i = 0; i < newCities.Length; i++)
 {
     newCities[i] = FindFirst(cities, i);
 }
 
-// Pause til 10:35
 
 
 
